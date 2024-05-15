@@ -1,0 +1,72 @@
+.banner{
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    .banner-content{
+        text-align: center;
+        position: absolute;
+        z-index: 10;
+        top: 50%;
+        left: 33%;
+        margin: 0 auto;
+        transform: translateY(-50%);
+        .logos{
+            img{
+                margin: 0 auto;
+                margin-bottom: 30px;
+            }
+        }
+        .text-content{
+            span{
+                text-transform: uppercase;
+                color: var(--white-color);
+                font-size: 18px;
+                letter-spacing: 0.5px;
+            }
+            h1{
+                text-transform: uppercase;
+                color: var(--white-color);
+                font-family: var(--text-Gilda-Display);
+                font-size: 56px;
+                margin-top: 30px;
+                line-height: 70px;
+                margin-bottom: 42px;
+                letter-spacing: 1px;
+            }
+        }
+    }
+}
+.date-picker{
+    position: relative;
+    .check-out-form-section{
+        background-color: var(--white-color);
+        padding: 15px;
+        position: absolute;
+        bottom: 0;
+        z-index: 1;
+        .checkout-form{
+            padding: 14px 25px 11px;
+            &:not(:last-child){
+                border-right: 1px solid var(--bg-100);
+            }
+            h6{
+                color: var(--black-color);
+                font-size: 20px;
+                font-weight: 600;
+                text-transform: uppercase; 
+                margin-bottom: -8px;
+            }
+            form input, form select{
+                font-size: 16px;
+                padding: 0px;
+                color: var(--primary);
+                width: 280px;
+                background: transparent;
+                border-color: transparent;
+                outline: none;
+            }
+        }
+    }
+}

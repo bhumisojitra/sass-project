@@ -1,0 +1,83 @@
+.feature .feature-img, .feature .feature-img2 {
+  margin-right: -170px;
+  position: relative;
+  z-index: 2;
+  margin-top: 50px;
+  overflow: hidden;
+  transition: all 0.5s ease-in;
+}
+.feature .feature-img:hover img, .feature .feature-img2:hover img {
+  transform: scale(1.1);
+  transition: all 0.3s ease-in;
+}
+.feature .feature-content, .feature .feature-content2 {
+  position: relative;
+  background-color: var(--bg-100);
+  padding: 61px 0 70px 231px;
+  margin-top: 100px;
+  left: -5%;
+}
+.feature .feature-content::after, .feature .feature-content2::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 232px;
+  width: 95px;
+  height: 11px;
+  background-color: var(--primary);
+}
+.feature .feature-content p, .feature .feature-content2 p {
+  margin-top: 25px;
+  font-size: 18px;
+  color: var(--text-color);
+}
+.feature .feature-content .btn-praimary a, .feature .feature-content2 .btn-praimary a {
+  margin-top: 25px;
+  border-color: var(--primary);
+  border-radius: 0px;
+}
+.feature .feature-content .btn-praimary a span, .feature .feature-content2 .btn-praimary a span {
+  color: var(--primary);
+  letter-spacing: 0;
+  font-weight: 400;
+}
+.feature .feature-content .btn-praimary a:hover span, .feature .feature-content2 .btn-praimary a:hover span {
+  color: var(--white-color);
+}
+.feature .feature-content .fest-small-img, .feature .feature-content2 .fest-small-img {
+  position: absolute;
+  top: 18px;
+  right: 13px;
+}
+.feature .feature-img2 {
+  margin-left: -170px;
+}
+.feature .feature-content2 {
+  padding: 61px 231px 70px 70px;
+  left: 0%;
+}
+
+.shine {
+  position: relative;
+  overflow: hidden;
+}
+.shine::before {
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 100%);
+  content: "";
+  display: block;
+  height: 100%;
+  left: -75%;
+  position: absolute;
+  top: 0;
+  transform: skewX(-25deg);
+  width: 50%;
+  z-index: 2;
+}
+.shine:hover::before, .shine:focus::before {
+  animation: shine 0.85s;
+}
+@keyframes shine {
+  100% {
+    left: 125%;
+  }
+}/*# sourceMappingURL=feature.css.map */

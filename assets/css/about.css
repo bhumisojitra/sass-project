@@ -1,0 +1,158 @@
+.about {
+  background-image: url("../img/about/pattern.65d483d3.png");
+  background-repeat: no-repeat;
+  background-position: right;
+  position: relative;
+  top: -75px;
+}
+.about .about-images .roms {
+  position: relative;
+  top: 75px;
+}
+.about .about-images .roms .rom-img1 img {
+  height: auto;
+  max-width: 100%;
+}
+.about .about-images .roms::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: -40px;
+  width: 30px;
+  height: 250px;
+  background-color: var(--primary);
+}
+.about .about-images .roms .about-2 {
+  position: absolute;
+  bottom: -40px;
+  right: 20%;
+  border: 15px solid var(--white-color);
+}
+.about .about-images .roms .btn-item {
+  position: absolute;
+  top: 79px;
+  left: 60%;
+  padding: 12px;
+  border: 1px solid #d4d4d5;
+}
+.about .about-images .roms .btn-item .play-btn {
+  width: 107px;
+  height: 107px;
+  line-height: 107px;
+  text-align: center;
+  background: var(--primary);
+  color: var(--white-color);
+  font-size: 30px;
+  display: inline-block;
+}
+.about .about-images .roms .exp-item {
+  position: absolute;
+  padding: 36px 15px 33px 15px;
+  background-color: var(--black-color);
+  top: 213px;
+  left: 20%;
+  text-align: center;
+}
+.about .about-images .roms .exp-item img {
+  margin: 0 auto;
+}
+.about .about-images .roms .exp-item h4 {
+  font-size: 24px;
+  color: var(--white-color);
+  font-family: var(--text-Gilda-Display);
+  margin: 10px 0px;
+}
+.about .about-images .roms .exp-item p {
+  font-size: 18px;
+  color: #ababab;
+  line-height: 24px;
+}
+.about .about-text {
+  margin-top: 75px;
+  padding-right: 20%;
+}
+.about .about-text .about-text1 {
+  margin-top: 35px;
+  color: var(--text-color);
+}
+.about .about-text .about-detail .about-detail1 {
+  margin-top: 40px;
+}
+.about .about-text .about-detail .about-detail1 img {
+  width: 64px;
+  height: 64px;
+}
+.about .about-text .about-detail .about-detail1 .h1 {
+  width: 80px;
+  height: 80px;
+}
+.about .about-text .about-detail .about-detail1 h4 {
+  font-size: 24px;
+  letter-spacing: 0.15px;
+  font-family: var(--text-Gilda-Display);
+  color: var(--text-color-100);
+  margin-left: 20px;
+}
+.about .about-text .icone-box {
+  margin-top: 40px;
+}
+.about .about-text .icone-box i {
+  font-size: 25px;
+  color: var(--primary);
+}
+.about .about-text .icone-box .about-content {
+  margin-left: 40px;
+}
+.about .about-text .icone-box .about-contect1 {
+  margin-left: 20px;
+}
+.about .about-text .icone-box .about-contect1 span {
+  color: var(--text-color);
+  font-size: 18px;
+  text-transform: uppercase;
+}
+.about .about-text .icone-box .about-contect1 h4 {
+  display: block;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.bounce-y {
+  animation: bounce-y 10s linear infinite;
+}
+
+@keyframes bounce-y {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.shine {
+  position: relative;
+  overflow: hidden;
+}
+.shine::before {
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 100%);
+  content: "";
+  display: block;
+  height: 100%;
+  left: -75%;
+  position: absolute;
+  top: 0;
+  transform: skewX(-25deg);
+  width: 50%;
+  z-index: 2;
+}
+.shine:hover::before, .shine:focus::before {
+  animation: shine 0.85s;
+}
+@keyframes shine {
+  100% {
+    left: 125%;
+  }
+}/*# sourceMappingURL=about.css.map */

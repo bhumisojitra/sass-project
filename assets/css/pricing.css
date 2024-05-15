@@ -1,0 +1,79 @@
+.pricing {
+  background-color: #FAF7F2;
+}
+.pricing .pricing-content {
+  margin-top: 30px;
+}
+.pricing .pricing-content .pricing-img {
+  float: left;
+  margin-right: 20px;
+  overflow: hidden;
+  transition: all 0.5s ease-in;
+}
+.pricing .pricing-content .pricing-img:hover img {
+  transform: scale(1.1);
+  transition: all 0.3s ease-in;
+}
+.pricing .pricing-content .pricing-img img {
+  width: 80px;
+  height: 80px;
+  display: inline-block;
+}
+.pricing .pricing-content .detail1, .pricing .pricing-content .detail2 {
+  padding-top: 5px;
+}
+.pricing .pricing-content .detail1 span, .pricing .pricing-content .detail2 span {
+  font-size: 14px;
+  color: var(--text-color);
+}
+.pricing .pricing-content .detail1 p, .pricing .pricing-content .detail2 p {
+  color: var(--primary);
+  border: 1px solid var(--primary);
+  padding: 0px 20px 0px 20px;
+  margin-right: 25px;
+  text-transform: uppercase;
+}
+.pricing .pricing-content .detail2 h6 {
+  font-size: 20px;
+  font-family: var(--text-Gilda-Display);
+}
+.pricing .pricing-content .detail2 span {
+  color: var(--black-color);
+  font-size: 20px;
+  font-family: var(--text-Gilda-Display);
+  margin-right: 30px;
+  position: relative;
+}
+.pricing .pricing-content .detail2 span::after {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: -310px;
+  width: 300px;
+  border: 1px dashed #c0bfbe;
+}
+
+.shine {
+  position: relative;
+  overflow: hidden;
+}
+.shine::before {
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 100%);
+  content: "";
+  display: block;
+  height: 100%;
+  left: -75%;
+  position: absolute;
+  top: 0;
+  transform: skewX(-25deg);
+  width: 50%;
+  z-index: 2;
+}
+.shine:hover::before, .shine:focus::before {
+  animation: shine 0.85s;
+}
+@keyframes shine {
+  100% {
+    left: 125%;
+  }
+}/*# sourceMappingURL=pricing.css.map */

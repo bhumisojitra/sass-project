@@ -1,0 +1,91 @@
+.news {
+  background-image: url("../img/news/bg-shape.df4243ae.png");
+  background-repeat: no-repeat;
+  background-position: left bottom;
+}
+.news .news-content {
+  position: relative;
+}
+.news .news-content .img-box {
+  overflow: hidden;
+  transition: all 0.5s ease-in;
+}
+.news .news-content .img-box:hover img {
+  transform: scale(1.1);
+}
+.news .news-content .img-box .date {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  padding: 14px 10px 5px 10px;
+  background-color: var(--black-color);
+  color: var(--white-color);
+  display: inline-block;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+.news .news-content .news-box {
+  position: absolute;
+  bottom: -18%;
+  background-color: var(--white-color);
+  padding: 14px 17px 14px 17px;
+  left: 14%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.news .news-content .news-box ul {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+.news .news-content .news-box ul li {
+  margin-right: 10px;
+}
+.news .news-content .news-box ul li i {
+  color: var(--primary);
+}
+.news .news-content .news-box ul li span {
+  font-size: 12px;
+  color: var(--text-color);
+  text-transform: uppercase;
+}
+.news .news-content .news-box h4 {
+  font-size: 24px;
+  font-family: var(--text-Gilda-Display);
+  color: var(--text-color-100);
+  margin-bottom: 7px;
+}
+.news .news-content .news-box .read-more {
+  background-color: #F8F5F0;
+  width: 100%;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  font-size: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.shine {
+  position: relative;
+  overflow: hidden;
+}
+.shine::before {
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 100%);
+  content: "";
+  display: block;
+  height: 100%;
+  left: -75%;
+  position: absolute;
+  top: 0;
+  transform: skewX(-25deg);
+  width: 50%;
+  z-index: 2;
+}
+.shine:hover::before, .shine:focus::before {
+  animation: shine 0.85s;
+}
+@keyframes shine {
+  100% {
+    left: 125%;
+  }
+}/*# sourceMappingURL=news.css.map */

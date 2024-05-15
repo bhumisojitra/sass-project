@@ -1,0 +1,152 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+$primary-color: #AA8453;
+$primary-color-200: #CAB293;
+$primary-color-rgb: 170, 132, 83;
+$white-color: #ffffff;
+$white-color-rgb: 255, 255, 255;
+$black-color: #000000;
+$black-color-rgb: 0, 0, 0;
+$text-color: #666666;
+$text-color-100: #222222;
+$text-color-200: #ABABAB;
+$bg-color: #AA8453;
+$bg-color-100: #F8F5F0;
+$text-barlow: 'Barlow';
+$text-Barlow-Condensed: 'Barlow Condensed';
+$text-Gilda-Display: 'Gilda Display';
+$fs: 16px;
+$fw: 400;
+$lh: 30px;
+$gutter-width: 15px;
+
+:root{
+    --primary: #{$primary-color};
+    --primary-200: #{$primary-color-200};
+    --primary-rgb: #{$primary-color-rgb};
+    --white-color: #{$white-color};
+    --white-rgb: #{$white-color-rgb};
+    --black-color: #{$black-color};
+    --black-rgb: #{$black-color-rgb};
+    --text-color: #{$text-color};
+    --text-color-100: #{$text-color-100};
+    --text-color-200: #{$text-color-200};
+    --bg-color: #{$bg-color};
+    --bg-100: #{$bg-color-100};
+    --text-barlow: #{$text-barlow};
+    --text-Barlow-Condensed: #{$text-Barlow-Condensed};
+    --text-Gilda-Display: #{$text-Gilda-Display};
+    --fs: #{$fs};
+    --fw: #{$fw};
+    --lh: #{$lh};
+    --gw: #{$gutter-width};
+}
+.btn{
+    a{
+        background-color: var(--primary);
+        color: var(--white-color);
+        padding: 12px 35px;
+        display: inline-block;
+        font-size: 18px;
+        font-weight: 600;
+        font-family: var(--text-Barlow);
+        text-transform: uppercase;
+        position: relative;
+        overflow: hidden;
+        border: 1px solid var(--primary);
+        &:hover{
+            border: 1px solid white;
+        }
+    }
+    span, .btn-primary{
+        z-index: 5;
+        position: relative;
+        transition: color 350ms ease;
+    }
+    a::after, a::before{
+        position: absolute;
+        content: ' ';
+        width: 100%;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        background: var(--black-color);
+        z-index: -1;
+    }
+    a::before {
+        transform: translateX(-100%);
+        z-index: 1;
+    }
+    a:hover:before {
+        transform: translateX(0);
+        transition: transform 350ms ease;
+    }
+    a::after {
+        z-index: 0;
+        transform: translateX(100%);
+        transition: none;
+        transition: transform 350ms ease;
+    }
+    a:hover:after {
+        opacity: 1;
+        transform: translateX(0);
+        transition: transform 350ms 360ms ease;
+    }
+}
+.btn-praimary{
+    a{
+        display: inline-block;
+        font-size: 18px;
+        line-height: 48px;
+        font-weight: 600;
+        font-family: var(--text-Barlow);
+        text-transform: uppercase;
+        position: relative;
+        overflow: hidden;
+        background-color: transparent;
+        border: 1px solid var(--white-color);
+        border-radius: 5px;
+        color: var(--white-color);
+        padding: 1px 27px;
+        &:hover{
+            border: 1px solid var(--primary);
+        }
+    }
+    span, .btn-primary{
+        z-index: 5;
+        position: relative;
+        transition: color 350ms ease;
+    }
+    a::after, a::before{
+        position: absolute;
+        content: ' ';
+        width: 100%;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        background: var(--primary);
+        z-index: -1;
+    }
+    a::before {
+        transform: translateX(-100%);
+        z-index: 1;
+    }
+    a:hover:before {
+        transform: translateX(0);
+        transition: transform 350ms ease;
+    }
+    a::after {
+        z-index: 0;
+        transform: translateX(100%);
+        transition: none;
+        transition: transform 350ms ease;
+    }
+    a:hover:after {
+        opacity: 1;
+        transform: translateX(0);
+        transition: transform 350ms 360ms ease;
+    }
+}

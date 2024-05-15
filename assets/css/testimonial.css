@@ -1,0 +1,52 @@
+.testimonial {
+  background-image: url("../img/testimonial/testi-bg.jpg");
+  background-repeat: no-repeat;
+}
+.testimonial .title span {
+  color: var(--white-color);
+}
+.testimonial .title span img {
+  color: var(--white-color);
+}
+.testimonial .title h2 {
+  color: var(--white-color);
+}
+.testimonial .testimonial-content {
+  margin-top: 50px;
+  position: relative;
+  z-index: 1;
+}
+.testimonial .testimonial-content::after {
+  position: absolute;
+  content: "";
+  top: 10px;
+  left: 5%;
+  width: 110px;
+  height: 200px;
+  z-index: -1;
+  background-color: #a98860;
+}
+.testimonial .testimonial-content .textim-detail {
+  margin-left: 50px;
+}
+.testimonial .testimonial-content .textim-detail ul {
+  gap: 3px;
+}
+.testimonial .testimonial-content .textim-detail ul li i {
+  color: var(--white-color);
+}
+.testimonial .testimonial-content .textim-detail p {
+  font-size: 18px;
+  margin-top: 20px;
+  margin-bottom: 26px;
+  color: var(--white-color);
+}
+.testimonial .testimonial-content .textim-detail h4 {
+  font-size: 24px;
+  font-family: var(--text-Gilda-Display);
+  color: var(--white-color);
+}
+.testimonial .testimonial-content .textim-detail span {
+  font-size: 18px;
+  color: var(--white-color);
+}/*# sourceMappingURL=testimonial.css.map */

@@ -1,0 +1,114 @@
+footer{
+    background-color: var(--black-color);
+    .logo-img{
+        margin-bottom: 30px;
+    }
+    p{
+        font-size: 18px;
+        color: var(--bg-100);
+        margin-bottom: 47px;
+    }
+    .social-icon{
+        ul{
+            display: flex;
+            li{
+                margin-right: 6px;
+                a{
+                    i{
+                        color: var(--text-color-200);
+                        font-size: 18px;
+                        width: 40px;
+                        height: 40px;
+                        border: 1px solid var(--text-color-200);
+                        border-radius: 50%;
+                        text-align: center;
+                        line-height: 40px;
+                        transition: all 0.3s ease-in;
+                    }
+                }
+                &:hover{
+                    i{
+                        background-color: var(--primary);
+                        color: var(--white-color);
+                        border-color: var(--primary);
+                    }
+                }
+            }
+        }
+    }
+    .link1-content, .link2-content, .link3-content{
+        h4{
+            font-size: 24px;
+            color: var(--white-color);
+            font-family: var(--text-Gilda-Display);
+            margin-bottom: 22px;
+        }
+        ul{
+            li{
+                margin-bottom: 8px;
+                a{
+                    color: var(--text-color-200);
+                    span{
+                        margin-left: 10px;
+                    }
+                }
+            }
+        }
+    }
+    .link2-content{
+        color: var(--text-color-200);
+        ul{
+            i{
+                color: var(--primary);
+                display: flex;
+                align-items: center;
+            }
+        }
+    }
+    .link3-content{
+        span{
+            color: var(--text-color-200); 
+        }
+        form{
+            position: relative;
+            margin-bottom: 20px;
+            input{
+                margin-top: 20px;
+                padding: 10px 10px 10px 10px;
+                outline: none;
+            }
+            button{
+                position: absolute;
+                background-color: var(--primary);
+                padding: 12px;
+                top: 20px;
+                left: 36%;
+                border: none;
+            }
+        }
+        .cheak-info{
+            i{
+                color: var(--text-color-200);
+                margin-right: 10px;
+            }
+        }
+    }
+}
+.inner-container{
+    padding: 14px 30px 17px;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #adadad;
+    background-color: #333;
+    margin-top: 30px;
+    font-size: 20px;
+}
+.inner-container i{
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    background-color: var(--primary);
+    border-radius: 50%;
+    color: var(--black-color);
+}

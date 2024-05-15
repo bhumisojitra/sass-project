@@ -1,0 +1,92 @@
+.pricing{
+    background-color: #FAF7F2;
+    .pricing-content{
+        margin-top: 30px;
+        .pricing-img{
+            float: left;
+            margin-right: 20px;
+            overflow: hidden;
+            transition: all 0.5s ease-in;
+            &:hover{
+                img{
+                    transform: scale(1.1);
+                    transition: all 0.3s ease-in;
+                }
+            }
+            img{
+                width: 80px;
+                height: 80px;
+                display: inline-block;
+            }
+        }
+        .detail1, .detail2{
+            padding-top: 5px;
+            span{
+                font-size: 14px;
+                color: var(--text-color);
+            }
+            p{
+                color: var(--primary);
+                border: 1px solid var(--primary);
+                padding: 0px 20px 0px 20px;
+                margin-right: 25px;
+                text-transform: uppercase;
+            }
+        }
+        .detail2{
+            h6{
+                font-size: 20px;
+                font-family: var(--text-Gilda-Display);
+            }
+            span{
+                color: var(--black-color);
+                font-size: 20px;
+                font-family: var(--text-Gilda-Display);
+                margin-right: 30px;
+                position: relative;
+                &::after{
+                    content: '';
+                    position: absolute;
+                    top: 20px;
+                    left: -310px;
+                    width: 300px;
+                    border: 1px dashed #c0bfbe;
+                }
+            }
+        }  
+    }
+}
+.shine {
+	position: relative;
+	overflow: hidden;
+
+	&::before {
+		background: linear-gradient(
+			to right,
+			fade_out(#fff, 1) 0%,
+			fade_out(#fff, 0.7) 100%
+		);
+		content: '';
+		display: block;
+		height: 100%;
+		left: -75%;
+		position: absolute;
+		top: 0;
+		transform: skewX(-25deg);
+		width: 50%;
+		z-index: 2;
+	}
+
+	&:hover,
+	&:focus {
+		&::before {
+			animation: shine 0.85s;
+		}
+	}
+
+	@keyframes shine {
+		100% {
+			left: 125%;
+		}
+	}
+}

@@ -1,0 +1,46 @@
+.service {
+  background-color: #F8F5F0;
+}
+.service .service-content {
+  margin-top: 49px;
+  flex-wrap: wrap;
+}
+.service .service-content .service-img1, .service .service-content .service-img2, .service .service-content .service-img3, .service .service-content .service-img4, .service .service-content .service-img5 {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s ease-in;
+}
+.service .service-content .service-img1:hover .btn, .service .service-content .service-img2:hover .btn, .service .service-content .service-img3:hover .btn, .service .service-content .service-img4:hover .btn, .service .service-content .service-img5:hover .btn {
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.3s ease;
+}
+.service .service-content .service-img1:hover img, .service .service-content .service-img2:hover img, .service .service-content .service-img3:hover img, .service .service-content .service-img4:hover img, .service .service-content .service-img5:hover img {
+  transform: scale(1.1);
+  transition: all 0.3s ease-in;
+}
+.service .service-content .servics-content-btn {
+  position: absolute;
+  bottom: 10px;
+  left: 15px;
+  transition: all 0.3s ease;
+}
+.service .service-content .servics-content-btn .btn {
+  opacity: 0;
+  visibility: hidden;
+}
+.service .service-content .servics-content-box {
+  position: absolute;
+  bottom: 10px;
+  right: 15px;
+  line-height: 25px;
+}
+.service .service-content .servics-content-box h6 a {
+  font-size: 27px;
+  font-family: var(--text-Gilda-Display);
+  color: var(--white-color);
+}
+.service .service-content .servics-content-box span {
+  font-size: 14px;
+  color: var(--white-color);
+}/*# sourceMappingURL=service.css.map */

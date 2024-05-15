@@ -1,0 +1,90 @@
+.team-content {
+  overflow: hidden;
+  transition: all 0.5s ease-in;
+}
+.team-content:hover img {
+  transform: scale(1.1);
+  transition: all 0.3s ease-in;
+}
+.team-content .info-box {
+  position: relative;
+  padding: 21px 24px 20px;
+  margin: 0 auto;
+}
+.team-content .info-box::before {
+  position: absolute;
+  content: "";
+  width: 3px;
+  height: 42px;
+  top: 30px;
+  left: 0;
+  background-color: var(--primary);
+}
+.team-content .info-box::after {
+  position: absolute;
+  content: "";
+  top: 30px;
+  left: 6px;
+  width: 1px;
+  height: 20px;
+  background-color: var(--primary);
+}
+.team-content .info-box span {
+  font-size: 18px;
+  color: var(--text-color);
+}
+.team-content .info-box h4 a {
+  font-size: 24px;
+  font-family: var(--text-Gilda-Display);
+  color: var(--text-color-100);
+  transition: all 0.3s ease-in;
+}
+.team-content .info-box h4 a:hover {
+  color: var(--primary);
+}
+.team-content .social-media {
+  position: absolute;
+  right: 23%;
+  bottom: 98%;
+  transform: scaleY(0);
+  transform-origin: bottom;
+  z-index: 3;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s ease;
+  flex-direction: column;
+  display: flex;
+}
+.team-content .social-media a i {
+  color: var(--white-color);
+}
+.team-content:hover .social-media {
+  transform: scaleY(1);
+  opacity: 1;
+  visibility: visible;
+}
+
+.shine {
+  position: relative;
+  overflow: hidden;
+}
+.shine::before {
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 100%);
+  content: "";
+  display: block;
+  height: 100%;
+  left: -75%;
+  position: absolute;
+  top: 0;
+  transform: skewX(-25deg);
+  width: 50%;
+  z-index: 2;
+}
+.shine:hover::before, .shine:focus::before {
+  animation: shine 0.85s;
+}
+@keyframes shine {
+  100% {
+    left: 125%;
+  }
+}/*# sourceMappingURL=team.css.map */

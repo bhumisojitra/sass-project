@@ -1,0 +1,100 @@
+footer {
+  background-color: var(--black-color);
+}
+footer .logo-img {
+  margin-bottom: 30px;
+}
+footer p {
+  font-size: 18px;
+  color: var(--bg-100);
+  margin-bottom: 47px;
+}
+footer .social-icon ul {
+  display: flex;
+}
+footer .social-icon ul li {
+  margin-right: 6px;
+}
+footer .social-icon ul li a i {
+  color: var(--text-color-200);
+  font-size: 18px;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--text-color-200);
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+  transition: all 0.3s ease-in;
+}
+footer .social-icon ul li:hover i {
+  background-color: var(--primary);
+  color: var(--white-color);
+  border-color: var(--primary);
+}
+footer .link1-content h4, footer .link2-content h4, footer .link3-content h4 {
+  font-size: 24px;
+  color: var(--white-color);
+  font-family: var(--text-Gilda-Display);
+  margin-bottom: 22px;
+}
+footer .link1-content ul li, footer .link2-content ul li, footer .link3-content ul li {
+  margin-bottom: 8px;
+}
+footer .link1-content ul li a, footer .link2-content ul li a, footer .link3-content ul li a {
+  color: var(--text-color-200);
+}
+footer .link1-content ul li a span, footer .link2-content ul li a span, footer .link3-content ul li a span {
+  margin-left: 10px;
+}
+footer .link2-content {
+  color: var(--text-color-200);
+}
+footer .link2-content ul i {
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+}
+footer .link3-content span {
+  color: var(--text-color-200);
+}
+footer .link3-content form {
+  position: relative;
+  margin-bottom: 20px;
+}
+footer .link3-content form input {
+  margin-top: 20px;
+  padding: 10px 10px 10px 10px;
+  outline: none;
+}
+footer .link3-content form button {
+  position: absolute;
+  background-color: var(--primary);
+  padding: 12px;
+  top: 20px;
+  left: 36%;
+  border: none;
+}
+footer .link3-content .cheak-info i {
+  color: var(--text-color-200);
+  margin-right: 10px;
+}
+
+.inner-container {
+  padding: 14px 30px 17px;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #adadad;
+  background-color: #333;
+  margin-top: 30px;
+  font-size: 20px;
+}
+
+.inner-container i {
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  background-color: var(--primary);
+  border-radius: 50%;
+  color: var(--black-color);
+}/*# sourceMappingURL=footer.css.map */

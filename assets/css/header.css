@@ -1,0 +1,79 @@
+.head.fixed-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  background-color: var(--black-color);
+  transition: 0.2s linear;
+}
+
+header {
+  width: 100%;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  position: absolute;
+  z-index: 20;
+}
+header nav {
+  margin: 0 auto;
+}
+header nav ul {
+  display: flex;
+  gap: 30px;
+}
+header nav ul li a {
+  font-size: 18px;
+  color: var(--white-color);
+  font-family: var(--text-Barlow);
+  letter-spacing: 1.3px;
+  line-height: 30px;
+  font-weight: 500;
+}
+header nav ul li i {
+  color: var(--white-color);
+  font-size: 14px;
+}
+header nav .dropdown, header nav .dropdown2 {
+  position: relative;
+}
+header nav .dropdown .dropdown-menu, header nav .dropdown .dropdown-menu2, header nav .dropdown2 .dropdown-menu, header nav .dropdown2 .dropdown-menu2 {
+  position: absolute;
+  z-index: 1;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(50px);
+  transition: all 0.3s ease-in;
+}
+header nav .dropdown .dropdown-menu .dropdown-menu2, header nav .dropdown .dropdown-menu2 .dropdown-menu2, header nav .dropdown2 .dropdown-menu .dropdown-menu2, header nav .dropdown2 .dropdown-menu2 .dropdown-menu2 {
+  left: 115%;
+}
+header nav .dropdown .dropdown-menu ul, header nav .dropdown .dropdown-menu2 ul, header nav .dropdown2 .dropdown-menu ul, header nav .dropdown2 .dropdown-menu2 ul {
+  flex-direction: column;
+  background-color: var(--white-color);
+  box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.05);
+  width: 220px;
+  padding: 15px 25px;
+  border-bottom: 1px solid #ebf1f5;
+  gap: 5px;
+}
+header nav .dropdown .dropdown-menu ul li a, header nav .dropdown .dropdown-menu2 ul li a, header nav .dropdown2 .dropdown-menu ul li a, header nav .dropdown2 .dropdown-menu2 ul li a {
+  color: var(--black-color);
+  font-weight: 500;
+}
+header nav .dropdown .dropdown-menu ul li a:hover, header nav .dropdown .dropdown-menu2 ul li a:hover, header nav .dropdown2 .dropdown-menu ul li a:hover, header nav .dropdown2 .dropdown-menu2 ul li a:hover {
+  color: var(--primary);
+}
+header nav .dropdown .dropdown-menu:hover .dropdown-menu2, header nav .dropdown .dropdown-menu2:hover .dropdown-menu2, header nav .dropdown2 .dropdown-menu:hover .dropdown-menu2, header nav .dropdown2 .dropdown-menu2:hover .dropdown-menu2 {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0px);
+}
+header nav .dropdown:hover .dropdown-menu, header nav .dropdown2:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0px);
+}
+header nav .dropdown:hover a, header nav .dropdown2:hover a {
+  color: var(--primary);
+}/*# sourceMappingURL=header.css.map */
