@@ -322,6 +322,7 @@
 }
 
 .btn a {
+  background-color: var(--primary);
   color: var(--white-color);
   padding: 12px 35px;
   display: inline-block;
