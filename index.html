@@ -46,8 +46,9 @@
         <link rel="stylesheet" href="assets/css/footer.css">
         <!-- swiper -->
         <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+        <!-- media -->
+        <link rel="stylesheet" href="assets/css/media.css">
     </head>
-
     <body class="hidden">
         <!-- loader -->
         <div class="loader">
@@ -150,11 +151,9 @@
                             </li>
                         </ul>
                     </nav>
-                    <div class="btn">
-                        <a href="#">
-                            <span>Book Now</span>
-                        </a>
-                    </div>
+                    <a href="#" class="hello">
+                        <span>Book Now</span>
+                      </a>
                 </div>
             </div>
         </header>
@@ -190,7 +189,7 @@
                         </div>
                         <div class="swiper-slide">
                             <div class="banner">
-                                <img src="assets/img/banner/banner-2.jpg">
+                                <img src="assets/img/banner/banner-2.jpg" style="height: 892px;">
                                 <div class="containar">
                                     <div class="row">
                                         <div class="w-12">
@@ -219,21 +218,25 @@
             <section class="date-picker">
                 <div class="containar">
                     <div class="row">
-                        <div class="check-out-form-section d-flex">
+                        <div class="check-out-form-section d-flex" >
                             <div class="checkout-form">
                                 <div class="check-out-detail">
                                     <h6>Check in</h6>
-                                    <form action="" method="">
-                                        <input type="date" placeholder="20 June, 2023">
-                                    </form>
+                                    <div class="calendar-box">
+                                        <form action="" mrthod="">
+                                            <input type="date">
+                                        </form>
+                                    </div> 
                                 </div>
                             </div>
                             <div class="checkout-form">
                                 <div class="check-out-detail">
                                     <h6>Check out</h6>
-                                    <form action="" method="">
-                                        <input type="date" placeholder="20 June, 2023">
-                                    </form>
+                                    <div class="calendar-box">
+                                        <form action="" mrthod="">
+                                            <input type="date">
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
                             <div class="checkout-form">
@@ -274,9 +277,9 @@
                                         <img src="assets/img/about/about1-2.jpg" class="about-2">
                                     </div>
                                     <div class="btn-item">
-                                        <a href="#" class="play-btn">
+                                        <span class="play-btn button modal-toggle" data-target="openModal1">
                                             <i class="fa-solid fa-caret-right"></i>
-                                        </a>
+                                        </span>
                                     </div>
                                     <div class="exp-item bounce-y">
                                         <img src="assets/img/about/exp-icon.png">
@@ -286,6 +289,15 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- pop pop -->
+                        <div id="openModal1" class="modal-wrapper">
+                            <div class="modal">
+                               <a href="#close" title="Close" class="close">X</a>
+                               <div class="modal-content">
+                                  <img src="assets/img/about/maxresdefault.jpg">
+                               </div>
+                            </div>
+                         </div>
                         <div class="w-6">
                             <div class="about-text">
                                 <div class="title">
@@ -315,8 +327,8 @@
                                         <i class="fa-solid fa-phone-volume"></i>
                                     </div>
                                     <div class="about-contect1">
-                                        <span>Booking Now</span>
-                                        <h4>956 220 6666</h4>
+                                        <span><a href="#">Booking Now</a></span>
+                                        <h4><a href="#">956 220 6666</a></h4>
                                     </div>
                                 </div>
                             </div>
@@ -502,11 +514,19 @@
                         <h2>Book Hotal Rooms, <br> et Deals & Book Flights Online.</h2>
                     </div>
                     <div class="btn-item2">
-                        <a href="#" class="play-btn">
+                        <a class="play-btn button modal-toggle" data-target="openModal1">
                             <i class="fa-solid fa-caret-right"></i>
                         </a>
                     </div>
                 </div>
+                <div id="openModal1" class="modal-wrapper">
+                    <div class="modal">
+                       <a href="#close" title="Close" class="close">X</a>
+                       <div class="modal-content">
+                          <img src="assets/img/about/maxresdefault.jpg">
+                       </div>
+                    </div>
+                 </div>
             </section>
             <!-- feature -->
             <section class="feature">
@@ -1226,6 +1246,120 @@
                direction: 'horizontal',
                loop: true,
             });
+
+            //datepicker
+            const daysContainer = document.getElementById("daysContainer");
+            const prevBtn = document.getElementById("prevBtn");
+            const nextBtn = document.getElementById("nextBtn");
+            const monthYear = document.getElementById("monthYear");
+            const dateInput = document.getElementById("dateInput");
+            const calendar = document.getElementById("calendar");
+
+            let currentDate = new Date();
+            let selectedDate = null;
+
+            function handleDayClick(day) {
+            selectedDate = new Date(
+                currentDate.getFullYear(),
+                currentDate.getMonth(),
+                day
+            );
+            dateInput.value = selectedDate.toLocaleDateString("en-US");
+            calendar.style.display = "none";
+            renderCalendar();
+            }
+
+            function createDayElement(day) {
+            const date = new Date(currentDate.getFullYear(), currentDate.getMonth(), day);
+            const dayElement = document.createElement("div");
+            dayElement.classList.add("day");
+
+            if (date.toDateString() === new Date().toDateString()) {
+                dayElement.classList.add("current");
+            }
+            if (selectedDate && date.toDateString() === selectedDate.toDateString()) {
+                dayElement.classList.add("selected");
+            }
+
+            dayElement.textContent = day;
+            dayElement.addEventListener("click", () => {
+                handleDayClick(day);
+            });
+            daysContainer.appendChild(dayElement);
+            }
+
+            function renderCalendar() {
+            daysContainer.innerHTML = "";
+            const firstDay = new Date(
+                currentDate.getFullYear(),
+                currentDate.getMonth(),
+                1
+            );
+            const lastDay = new Date(
+                currentDate.getFullYear(),
+                currentDate.getMonth() + 1,
+                0
+            );
+
+            monthYear.textContent = `${currentDate.toLocaleString("default", {
+                month: "long"
+            })} ${currentDate.getFullYear()}`;
+
+            for (let day = 1; day <= lastDay.getDate(); day++) {
+                createDayElement(day);
+            }
+            }
+
+            prevBtn.addEventListener("click", () => {
+            currentDate.setMonth(currentDate.getMonth() - 1);
+            renderCalendar();
+            });
+
+            nextBtn.addEventListener("click", () => {
+            currentDate.setMonth(currentDate.getMonth() + 1);
+            renderCalendar();
+            });
+
+            dateInput.addEventListener("click", () => {
+            calendar.style.display = "block";
+            positionCalendar();
+            });
+
+            document.addEventListener("click", (event) => {
+            if (!dateInput.contains(event.target) && !calendar.contains(event.target)) {
+                calendar.style.display = "none";
+            }
+            });
+
+            function positionCalendar() {
+            const inputRect = dateInput.getBoundingClientRect();
+            calendar.style.top = 100 + "px";
+            calendar.style.left = 10 + "px";
+            }
+
+            window.addEventListener("resize", positionCalendar);
+
+            renderCalendar();
+
+            // pop pop
+            var cb = document.querySelectorAll(".close");
+                for (i = 0; i < cb.length; i++) {
+                cb[i].addEventListener("click", function() {
+                    var dia = this.parentNode.parentNode;
+                    dia.style.opacity = 0;
+                    dia.style.zIndex = -1;
+                });
+                }
+
+                var mt = document.querySelectorAll(".modal-toggle");
+                for (i = 0; i < mt.length; i++) {
+                mt[i].addEventListener("click", function() {
+                    var targetId = this.getAttribute("data-target");
+                    var target = document.getElementById(targetId);
+                    target.style.opacity = 1;
+                    target.style.zIndex = 9999;
+                });
+                }
 
         </script>
     </body>

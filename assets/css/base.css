@@ -36,9 +36,11 @@
   text-transform: uppercase;
   position: relative;
   overflow: hidden;
-  border: 1px solid var(--primary);
+  box-sizing: border-box;
+  border: transparent;
 }
 .btn a:hover {
+  box-sizing: border-box;
   border: 1px solid white;
 }
 .btn span, .btn .btn-primary {
@@ -124,6 +126,71 @@
   transition: transform 350ms ease;
 }
 .btn-praimary a:hover:after {
+  opacity: 1;
+  transform: translateX(0);
+  transition: transform 350ms 360ms ease;
+}
+
+.hello {
+  display: block;
+  position: relative;
+  text-decoration: none;
+  font-family: "Helvetica", sans-serif;
+  color: white;
+  background: transparent;
+  padding: 10px 40px;
+  border: 1px solid black;
+  background-color: #AA8453;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: bold;
+  overflow: hidden;
+}
+
+.hello span {
+  z-index: 5;
+  position: relative;
+  transition: color 350ms ease;
+}
+
+.hello:hover {
+  border: 1px solid white;
+}
+
+.hello:hover span {
+  color: white;
+}
+
+.hello::after, .hello::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background-color: black;
+  z-index: -1;
+}
+
+.hello::before {
+  transform: translateX(-100%);
+  z-index: 1;
+}
+
+.hello:hover:before {
+  transform: translateX(0);
+  transition: transform 350ms ease;
+}
+
+.hello::after {
+  z-index: 0;
+  transform: translateX(100%);
+  transition: none;
+  transition: transform 350ms ease;
+}
+
+.hello:hover:after {
   opacity: 1;
   transform: translateX(0);
   transition: transform 350ms 360ms ease;

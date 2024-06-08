@@ -17,13 +17,14 @@
 }
 .services2 .services-content .ser-1:hover img {
   animation: ser-1 0.5s ease alternate;
+  filter: brightness(0) invert(1);
 }
 @keyframes ser-1 {
   from {
-    transform: rotate(0deg);
+    transform: rotate(360deg);
   }
   to {
-    transform: rotate(360deg);
+    transform: rotate(0deg);
   }
 }
 .services2 .services-content .ser-1:hover .contents-items a, .services2 .services-content .ser-1:hover .contents-items p {

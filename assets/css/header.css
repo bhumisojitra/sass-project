@@ -2,7 +2,6 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
   z-index: 999;
   background-color: var(--black-color);
   transition: 0.2s linear;
@@ -33,6 +32,9 @@ header nav ul li a {
 header nav ul li i {
   color: var(--white-color);
   font-size: 14px;
+}
+header nav ul li:hover i {
+  color: var(--primary);
 }
 header nav .dropdown, header nav .dropdown2 {
   position: relative;

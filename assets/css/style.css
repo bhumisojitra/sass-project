@@ -322,7 +322,6 @@
 }
 
 .btn a {
-  background-color: var(--primary);
   color: var(--white-color);
   padding: 12px 35px;
   display: inline-block;
@@ -332,9 +331,11 @@
   text-transform: uppercase;
   position: relative;
   overflow: hidden;
-  border: 1px solid var(--primary);
+  box-sizing: border-box;
+  border: transparent;
 }
 .btn a:hover {
+  box-sizing: border-box;
   border: 1px solid white;
 }
 .btn span, .btn .btn-primary {
@@ -420,6 +421,71 @@
   transition: transform 350ms ease;
 }
 .btn-praimary a:hover:after {
+  opacity: 1;
+  transform: translateX(0);
+  transition: transform 350ms 360ms ease;
+}
+
+.hello {
+  display: block;
+  position: relative;
+  text-decoration: none;
+  font-family: "Helvetica", sans-serif;
+  color: white;
+  background: transparent;
+  padding: 10px 40px;
+  border: 1px solid black;
+  background-color: #AA8453;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: bold;
+  overflow: hidden;
+}
+
+.hello span {
+  z-index: 5;
+  position: relative;
+  transition: color 350ms ease;
+}
+
+.hello:hover {
+  border: 1px solid white;
+}
+
+.hello:hover span {
+  color: white;
+}
+
+.hello::after, .hello::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background-color: black;
+  z-index: -1;
+}
+
+.hello::before {
+  transform: translateX(-100%);
+  z-index: 1;
+}
+
+.hello:hover:before {
+  transform: translateX(0);
+  transition: transform 350ms ease;
+}
+
+.hello::after {
+  z-index: 0;
+  transform: translateX(100%);
+  transition: none;
+  transition: transform 350ms ease;
+}
+
+.hello:hover:after {
   opacity: 1;
   transform: translateX(0);
   transition: transform 350ms 360ms ease;
@@ -556,11 +622,13 @@ ol, ul {
 }
 
 .col-gap {
-  column-gap: 50px;
+  -moz-column-gap: 50px;
+       column-gap: 50px;
 }
 
 .col-gap-30 {
-  column-gap: 30px;
+  -moz-column-gap: 30px;
+       column-gap: 30px;
 }
 
 .gap-10 {
@@ -733,7 +801,6 @@ ol, ul {
   opacity: 0;
   visibility: hidden;
   transform: translateY(15px);
-  -webkit-transition: all 200ms linear;
   transition: all 200ms linear;
 }
 .progress-wrap.active-progress {
@@ -756,7 +823,6 @@ ol, ul {
   cursor: pointer;
   display: block;
   z-index: 1;
-  -webkit-transition: all 200ms linear;
   transition: all 200ms linear;
 }
 .progress-wrap svg path {
@@ -766,7 +832,6 @@ ol, ul {
   stroke: #AA8453;
   stroke-width: 4;
   box-sizing: border-box;
-  -webkit-transition: all 200ms linear;
   transition: all 200ms linear;
 }
 
@@ -774,7 +839,6 @@ ol, ul {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
   z-index: 999;
   background-color: var(--black-color);
   transition: 0.2s linear;
@@ -805,6 +869,9 @@ header nav ul li a {
 header nav ul li i {
   color: var(--white-color);
   font-size: 14px;
+}
+header nav ul li:hover i {
+  color: var(--primary);
 }
 header nav .dropdown, header nav .dropdown2 {
   position: relative;
@@ -920,6 +987,66 @@ header nav .dropdown:hover a, header nav .dropdown2:hover a {
   outline: none;
 }
 
+.header2 {
+  background-color: var(--primary);
+}
+
+.day.current {
+  background-color: var(--primary);
+  color: white;
+}
+
+.modal-toggle {
+  cursor: pointer;
+  color: var(--primary);
+}
+
+.modal-wrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.2s ease-in;
+  pointer-events: auto;
+}
+
+.modal-wrapper > div {
+  width: 60%;
+  height: 40%;
+  position: absolute;
+  top: 0;
+  bottom: 20%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  vertical-align: middle;
+  padding: 20px;
+  border-radius: 6px;
+  z-index: 1;
+}
+
+.close {
+  background: #606061;
+  color: #ffffff;
+  line-height: 25px;
+  position: absolute;
+  right: -12px;
+  text-align: center;
+  top: -10px;
+  width: 24px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 12px;
+}
+
+.close:hover {
+  background: var(--primary);
+}
+
 .about {
   background-image: url("../img/about/pattern.65d483d3.png");
   background-repeat: no-repeat;
@@ -1028,15 +1155,16 @@ header nav .dropdown:hover a, header nav .dropdown2:hover a {
 .about .about-text .icone-box .about-contect1 {
   margin-left: 20px;
 }
-.about .about-text .icone-box .about-contect1 span {
+.about .about-text .icone-box .about-contect1 span a {
   color: var(--text-color);
   font-size: 18px;
   text-transform: uppercase;
 }
-.about .about-text .icone-box .about-contect1 h4 {
+.about .about-text .icone-box .about-contect1 h4 a {
   display: block;
   font-size: 24px;
   font-weight: 400;
+  color: var(--text-color);
 }
 
 .bounce-y {
@@ -1079,6 +1207,60 @@ header nav .dropdown:hover a, header nav .dropdown2:hover a {
   }
 }
 
+.overlay {
+  position: fixed;
+  top: 50%;
+  bottom: 50%;
+  left: 0;
+  right: 0;
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup {
+  margin: 70px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  width: 50%;
+  position: relative;
+  transition: all 5s ease-in-out;
+}
+
+.popup .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+
+.popup .close:hover {
+  color: #06D85F;
+}
+
+.popup .content {
+  max-height: 50%;
+  overflow: auto;
+}
+
+@media screen and (max-width: 700px) {
+  .box {
+    width: 70%;
+  }
+  .popup {
+    width: 70%;
+  }
+}
 .service {
   background-color: #F8F5F0;
 }
@@ -1145,13 +1327,14 @@ header nav .dropdown:hover a, header nav .dropdown2:hover a {
 }
 .services2 .services-content .ser-1:hover img {
   animation: ser-1 0.5s ease alternate;
+  filter: brightness(0) invert(1);
 }
 @keyframes ser-1 {
   from {
-    transform: rotate(0deg);
+    transform: rotate(360deg);
   }
   to {
-    transform: rotate(360deg);
+    transform: rotate(0deg);
   }
 }
 .services2 .services-content .ser-1:hover .contents-items a, .services2 .services-content .ser-1:hover .contents-items p {
@@ -1810,6 +1993,4 @@ footer .link3-content .cheak-info i {
   background-color: var(--primary);
   border-radius: 50%;
   color: var(--black-color);
-}
-
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */
